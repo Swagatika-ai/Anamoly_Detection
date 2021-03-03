@@ -50,6 +50,9 @@ st.subheader("As can be seen there are a pattern being captured by the sensors")
 image = Image.open("states1.png") 
 st.image(image)
 
+image = Image.open("compare.png") 
+st.image(image)
+
 #st.write(df.head())
 fig, ax = plt.subplots()
 sns.heatmap(df.corr(), ax=ax)
