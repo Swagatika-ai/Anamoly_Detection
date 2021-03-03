@@ -21,18 +21,8 @@ def main():
 
 main()
 
-
-
-d = np.load('test1.npy')
-def welcome():
-    return "welcome All"
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
-
 Date_column="date"
-DATA_PATH="C:\\Users\\LENOVO\\Documents\\webapp_steamlit\\processed_data.csv"
+DATA_PATH="processed_data.csv"
 
 
 @st.cache
@@ -48,7 +38,7 @@ df = load_data(5000)
 from PIL import Image
 
 
-image = Image.open("C:\\Users\\LENOVO\\Documents\\webapp_steamlit\\images\\s.png") 
+image = Image.open("s.png") 
 st.image(image)
 st.subheader("As can be seen there are a pattern being captured by the sensors")
 
@@ -57,7 +47,7 @@ filtered_data = df[df["date"].dt.hour == filter]
 #st.subheader("all anamolies %s:00" %filter)
 st.line_chart(filtered_data)
 
-image = Image.open("C:\\Users\\LENOVO\\Documents\\webapp_steamlit\\images\\states1.png") 
+image = Image.open("states1.png") 
 st.image(image)
 
 #st.write(df.head())
