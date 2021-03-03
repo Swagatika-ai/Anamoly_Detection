@@ -22,7 +22,7 @@ def main():
 main()
 
 Date_column="date"
-DATA_PATH="processed_data.csv"
+DATA_PATH="processed_data1.csv"
 
 
 @st.cache
@@ -42,10 +42,10 @@ image = Image.open("s.png")
 st.image(image)
 st.subheader("As can be seen there are a pattern being captured by the sensors")
 
-filter = st.slider('hour',0,23,15)
-filtered_data = df[df["date"].dt.hour == filter]
-#st.subheader("all anamolies %s:00" %filter)
-st.line_chart(filtered_data)
+# filter = st.slider('hour',0,23,15)
+# filtered_data = df[df["date"].dt.hour == filter]
+# #st.subheader("all anamolies %s:00" %filter)
+# st.line_chart(filtered_data)
 
 image = Image.open("states1.png") 
 st.image(image)
