@@ -9,7 +9,7 @@ import seaborn as sns
 # from keras.models import load_model
 # model = load_model('model.h5')
 def main():
-    st.title("Anamoly Detecion")
+    st.title("Anomaly Detecion")
     st.subheader("High Level Analysis")
     html_temp = """ 
     <div style="background.color:tomato;padding:15px;">
