@@ -1,25 +1,43 @@
 import streamlit as st
-import joblib ,os
+import os
 import pandas as pd
 import numpy as np
-
+#import tensorflow as tf
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# from keras.models import load_model
-# model = load_model('model.h5')
+#from keras.models import load_model
+#model = load_model('model.h5')
 def main():
-    st.title("Anomaly Detecion")
-    st.subheader("High Level Analysis")
+    st.title("Robust IOT-Based Predictive Maintenance Solution")
+    #st.subheader("High Level Analysis")
     html_temp = """ 
     <div style="background.color:tomato;padding:15px;">
-    <h2>Predicting Machines failures</h2>
+    <h2>An IoT-based Predictive Maintenance Architecture</h2>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
 
 
 main()
+
+from PIL import Image
+image = Image.open("arch.png") 
+st.image(image)
+
+st.title("Process Manufacturing Dashboard")
+image = Image.open("Dashboard1.png") 
+st.image(image)
+
+st.title("Predictive Maintenance App")
+image = Image.open("Dashboard2.png") 
+st.image(image)
+
+
+
+
+
+
 
 Date_column="date"
 DATA_PATH="processed_data1.csv"
@@ -32,32 +50,15 @@ def load_data(nrows):
     df["date"]=pd.to_datetime(df[Date_column],infer_datetime_format=True)
     return df
 
-data_load_state= st.text("loading...")
+#data_load_state= st.text("loading...")
 df = load_data(5000)
 
-from PIL import Image
 
 
-image = Image.open("s.png") 
-st.image(image)
-st.subheader("As can be seen there are a pattern being captured by the sensors")
-
-# filter = st.slider('hour',0,23,15)
-# filtered_data = df[df["date"].dt.hour == filter]
-# #st.subheader("all anamolies %s:00" %filter)
-# st.line_chart(filtered_data)
 
 image = Image.open("states1.png") 
 st.image(image)
 
-image = Image.open("compare.png") 
-st.image(image)
-
-#st.write(df.head())
-fig, ax = plt.subplots()
-sns.heatmap(df.corr(), ax=ax)
-st.write(fig)
-st.text("We can see strongly correlated group of sensors - from sensor_18 to sensor_26. There also some other correlated groups but not as strong as the mentioned one!!!") 
 
 
-
+ 
